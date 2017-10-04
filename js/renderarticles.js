@@ -1,3 +1,4 @@
+var articles =
 {
   "articles":  [
       {
@@ -120,7 +121,6 @@
               }
           },
           "publication_year": 2016,
-          "doi": ""
       },
       {
           "article": {
@@ -141,7 +141,6 @@
               }
           },
           "publication_year": 2017,
-          "doi": ""
       },
       {
           "article": {
@@ -204,4 +203,8 @@
           "doi": "10.1001/jama.2014.3700"
       }
   ]
-}
+};
+
+var articlesTemplateScript = $("#articles").html();
+var compiledTemplate = Handlebars.compile(articlesTemplateScript);
+$(document.body).append(compiledTemplate(articles));
