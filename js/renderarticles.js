@@ -107,7 +107,7 @@ var articles =
               "authors": [
                   "Oberlander J",
                   "Jones DK",
-                  "Singer, PM"
+                  "Singer PM"
               ],
               "title": "In the ACA's Shadow: The Fate of the Children's Health Insurance Program"
           },
@@ -204,6 +204,14 @@ var articles =
       }
   ]
 };
+
+/**Used for excluding commas when there are only two authors**/
+Handlebars.registerHelper('unlessOnlyTwo', function(arrayLength, options) {
+  if(arrayLength != 2) {
+    return options.fn(this); // returns truthy
+  }
+  return options.inverse(this); //returns falsey
+});
 
 var articlesTemplateScript = $("#articles").html();
 var compiledTemplate = Handlebars.compile(articlesTemplateScript);

@@ -27,9 +27,9 @@
     <li>
         {{#article.authors ~}}
            {{#if @last}}
-              <span>&amp; {{this}}.</span>
+              <span>{{#unless @first}}&amp; {{/unless}}{{this}}.</span>
            {{else}}
-              <span>{{this}},</span>
+              <span>{{this}}{{#unlessOnlyTwo ../article.authors.length}},{{/unlessOnlyTwo}}</span>
            {{/if}}
         {{~/article.authors}}
         <span>{{article.title}}.</span>
