@@ -68,9 +68,9 @@
                 <cite>
                   {{#article.authors ~}}
                      {{#if @last}}
-                        <span>{{#unless @first}}&amp; {{/unless}}{{this}}.</span>
+                        <span>{{#unless @first}}&amp; {{/unless}}{{#ifSingerPM this}}<b>{{this}}</b>{{else}}{{this}}{{/ifSingerPM}}.</span>
                      {{else}}
-                        <span>{{this}}{{#unlessOnlyTwo ../article.authors.length}},{{/unlessOnlyTwo}}</span>
+                        <span>{{#ifSingerPM this}}<b>{{this}}</b>{{else}}{{this}}{{/ifSingerPM}}{{#unlessOnlyTwo ../article.authors.length}},{{/unlessOnlyTwo}}</span>
                      {{/if}}
                   {{~/article.authors}}
                   <span>{{article.title}}.</span>

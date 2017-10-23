@@ -213,6 +213,13 @@ Handlebars.registerHelper('unlessOnlyTwo', function(arrayLength, options) {
   return options.inverse(this); //returns falsey
 });
 
+Handlebars.registerHelper('ifSingerPM', function(author, options) {
+  if(author == 'Singer PM') {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 var articlesTemplateScript = $("#articles").html();
 var compiledTemplate = Handlebars.compile(articlesTemplateScript);
 $("#rendered-articles").html(compiledTemplate(articles));
