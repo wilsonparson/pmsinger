@@ -8,6 +8,8 @@ section {
     color: white; }
     section:first-of-type .btn {
       margin: 5px; }
+  section:last-of-type {
+    padding-bottom: 60px; }
 
 .badge {
   font-size: 100%;
