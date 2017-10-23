@@ -3,3 +3,4 @@
 - ~~Fix cases with only one or two authors in articles template~~
 - Eventually call JSON file from server, rather than creating variable inside script
 - Reduce image size
+- Fix href to CV
