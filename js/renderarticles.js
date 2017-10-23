@@ -215,4 +215,4 @@ Handlebars.registerHelper('unlessOnlyTwo', function(arrayLength, options) {
 
 var articlesTemplateScript = $("#articles").html();
 var compiledTemplate = Handlebars.compile(articlesTemplateScript);
-$(document.body).append(compiledTemplate(articles));
+$("#rendered-articles").html(compiledTemplate(articles));

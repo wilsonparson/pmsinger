@@ -3,61 +3,109 @@
 <head>
   <title>Phillip M. Singer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
   <script src="js/renderarticles.js" defer></script>
 </head>
 <body>
-<h1>Phillip M. Singer</h1>
-<p><img src="img/PM Singer Headshot.jpg" align="left" width="348" height="464" alt="pmsinger" hspace="20"><br>
-<strong><a class="one" href="pmsingercv.pdf" target="_blank">Curriculum Vitae</a></strong></p>
-
-<p><strong>Contact:</strong> </p>
-
-<a class="one" href="mailto:pmsinger@umich.edu"  target="_blank">pmsinger@umich.edu</a><br> </p>
-
-<a class="one" href="https://twitter.com/SingerPM"  target="_blank">https://twitter.com/SingerPM</a><br> </p>
-
-<strong>Primary research interests: </strong> </p> Politics of healthcare, Medicaid, federalism, state politics, health reform, federal and state political institutions <br>
-<p><strong>Biography:</strong> </p> Phillip M. Singer is a PhD candidate in the Department of Health Management and Policy at the University of Michigan School of Public Health, with a concentration in Political Science. His research topics include state health policy, comparative politics, vulnerable populations, political communication, and health reform. His work has been published in The New England Journal of Medicine, Health Affairs, JAMA, The Journal of Health Politics, Policy and Law, and The American Journal of Public Health, amongst others. His dissertation explores the politics of Medicaid expansion, using a mixed-methods approach. He has employed varied methodologies in his work, including key-informant interviews, process tracing, and econometric techniques. </p>
-<p><strong>Published Articles:</strong> </p>
-<script id="articles" type="text/x-handlebars-template">
-  <ul>
-    {{#articles}}
-    <li>
-        {{#article.authors ~}}
-           {{#if @last}}
-              <span>{{#unless @first}}&amp; {{/unless}}{{this}}.</span>
-           {{else}}
-              <span>{{this}}{{#unlessOnlyTwo ../article.authors.length}},{{/unlessOnlyTwo}}</span>
-           {{/if}}
-        {{~/article.authors}}
-        <span>{{article.title}}.</span>
-        <i>{{journal.title}}</i>.
-        {{#if publication_year}}
-            <span>{{publication_year}}.</span>
-        {{else}}
-            <span>Forthcoming.</span>
-        {{/if}}
-        {{~#if journal.volume~}}
-            <span>{{~journal.volume~}}</span>
-        {{~/if~}}
-        {{~#if journal.issue~}}
-            <span>({{~journal.issue~}}):</span>
-        {{~/if~}}
-        {{#if journal.pages}}
-            {{#if journal.pages.end}}
-                <span>{{journal.pages.start}}&ndash;{{journal.pages.end}}.</span>
-            {{else}}
-                <span>{{journal.pages.start}}.</span>
-            {{/if}}
-        {{/if}}
-        {{#if doi}}
-            <span>DOI: <a href="http://dx.doi.org/{{doi}}">{{doi}}</a></span>
-        {{/if}}
-    </li>
-    {{/articles}}
-  </ul>
-</script>
+  <main>
+    <section class="row no-gutters">
+      <div class="col">
+        <div class="container">
+          <div class="row">
+            <div class="col order-md-2 d-flex flex-column">
+              <h1 class="display-4">Phillip M. Singer</h1>
+              <p class="lead">PhD candidate in the Department of Health Management and Policy at the University of Michigan School of Public Health, with a concentration in Political Science.</p>
+              <div class="d-flex flex-column flex-md-row mt-auto flex-wrap">
+                <a class="btn btn-light btn-lg" href="pmsingercv.pdf" target="_blank">Curriculum Vitae</a>
+                <a class="btn btn-primary btn-lg" href="mailto:pmsinger@umich.edu">Contact me &raquo;</a>
+              </div>
+            </div>
+            <div class="col-md-3 order-md-1">
+              <img class="img-fluid rounded mt-4 mt-md-auto" src="img/PM Singer Headshot_cropped.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row no-gutters">
+      <div class="col">
+        <div class="container">
+          <h1>Biography</h1>
+          <p>My research topics include state health policy, comparative politics, vulnerable populations, political communication, and health reform. My work has been published in the <i>New England Journal of Medicine</i>, <i>Health Affairs</i>, <i>JAMA</i>, the <i>Journal of Health Politics</i>, <i>Policy and Law</i>, and the <i>American Journal of Public Health</i>, amongst others. My dissertation explores the politics of Medicaid expansion, using a mixed-methods approach. I have employed varied methodologies in my work, including key-informant interviews, process tracing, and econometric techniques.</p>
+        </div>
+      </div>
+    </section>
+    <section class="row no-gutters">
+      <div class="col">
+        <div class="container">
+          <h1>Research interests</h1>
+          <ul class="list-unstyled d-flex flex-wrap">
+            <li class="badge badge-secondary">Politics of healthcare</li>
+            <li class="badge badge-secondary">Medicaid</li>
+            <li class="badge badge-secondary">Federalism</li>
+            <li class="badge badge-secondary">State politics</li>
+            <li class="badge badge-secondary">Health reform</li>
+            <li class="badge badge-secondary">Federal and state political institutions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="row no-gutters">
+      <div class="col">
+        <div class="container">
+          <h1>Published articles</h1>
+          <div id="rendered-articles">
+          </div>
+          <script id="articles" type="text/x-handlebars-template">
+            <ol class="articles">
+              {{#articles}}
+              <li>
+                <cite>
+                  {{#article.authors ~}}
+                     {{#if @last}}
+                        <span>{{#unless @first}}&amp; {{/unless}}{{this}}.</span>
+                     {{else}}
+                        <span>{{this}}{{#unlessOnlyTwo ../article.authors.length}},{{/unlessOnlyTwo}}</span>
+                     {{/if}}
+                  {{~/article.authors}}
+                  <span>{{article.title}}.</span>
+                  <i>{{journal.title}}</i>.
+                  {{#if publication_year}}
+                      <span>{{publication_year}}.</span>
+                  {{else}}
+                      <span>Forthcoming.</span>
+                  {{/if}}
+                  {{~#if journal.volume~}}
+                      <span>{{~journal.volume~}}</span>
+                  {{~/if~}}
+                  {{~#if journal.issue~}}
+                      <span>({{~journal.issue~}}):</span>
+                  {{~/if~}}
+                  {{#if journal.pages}}
+                      {{#if journal.pages.end}}
+                          <span>{{journal.pages.start}}&ndash;{{journal.pages.end}}.</span>
+                      {{else}}
+                          <span>{{journal.pages.start}}.</span>
+                      {{/if}}
+                  {{/if}}
+                  {{#if doi}}
+                      <span>DOI: <a href="http://dx.doi.org/{{doi}}">{{doi}}</a></span>
+                  {{/if}}
+                </cite>
+              </li>
+              {{/articles}}
+            </ol>
+          </script>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="d-flex justify-content-center align-items-center">
+    <small>&copy; 2017 Phillip M. Singer</small>
+  </footer>
 </body>
 </html>

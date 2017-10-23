@@ -1,0 +1,30 @@
+section {
+  background: beige;
+  padding-top: 30px; }
+  section:first-of-type {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background: black;
+    color: white; }
+    section:first-of-type .btn {
+      margin: 5px; }
+
+.badge {
+  font-size: 100%;
+  margin: 5px;
+  white-space: normal; }
+
+cite {
+  font-style: normal; }
+
+.articles li {
+  text-indent: -20px;
+  padding-left: 20px;
+  margin-bottom: 20px; }
+
+footer {
+  min-height: 100px;
+  background: black;
+  color: white; }
+
+/*# sourceMappingURL=styles.css.map */
