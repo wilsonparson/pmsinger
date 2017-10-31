@@ -8,11 +8,19 @@ var articles =
                   "Noppert G",
                   "Jenkins C"
               ],
-              "title": "The State of Tuberculosis Control Policy in the United States"
+              "title": "Gaps in Federal and State Screening of Tuberculosis in the United States"
           },
           "journal": {
-              "title": "American Journal of Public Health"
-          }
+              "title": "American Journal of Public Health",
+              "volume": 107,
+              "issue": 11,
+              "pages": {
+                "start": 1750,
+                "end": 1750
+              }
+          },
+          "publication_year": 2017,
+          "url": "http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2017.304076"
       },
       {
           "article": {
@@ -21,11 +29,19 @@ var articles =
                   "Tipirneni R",
                   "Nelson D"
               ],
-              "title": "Consumer-Directed Health Care in Medicaid: Past and Future Reforms"
+              "title": "Consumer-Directed Health Care for Medicaid Patients: Past and Future Reforms"
           },
           "journal": {
-              "title": "American Journal of Public Health"
-          }
+              "title": "American Journal of Public Health",
+              "volume": 107,
+              "issue": 10,
+              "pages": {
+                "start": 1592,
+                "end": 1594
+              }
+          },
+          "publication_year": 2017,
+          "url": "http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2017.304014"
       },
       {
           "article": {
@@ -44,7 +60,8 @@ var articles =
                   "end": 1226
               }
           },
-          "publication_year": 2017
+          "publication_year": 2017,
+          "url": "http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2017.303888"
       },
       {
           "article": {
@@ -63,7 +80,8 @@ var articles =
                   "end": 862
               }
           },
-          "publication_year": 2017
+          "publication_year": 2017,
+          "url": "http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2017.303772"
       },
       {
           "article": {
@@ -82,7 +100,7 @@ var articles =
               }
           },
           "publication_year": 2016,
-          "doi": "10.1177/0160323X17699526"
+          "url": "http://journals.sagepub.com/doi/abs/10.1177/0160323X17699526"
       },
       {
           "article": {
@@ -100,7 +118,7 @@ var articles =
               }
           },
           "publication_year": 2017,
-          "doi": "10.1056/NEJMp1612830"
+          "url": "http://www.nejm.org/doi/full/10.1056/NEJMp1612830"
       },
       {
           "article": {
@@ -121,6 +139,7 @@ var articles =
               }
           },
           "publication_year": 2016,
+          "url": "http://www.healthaffairs.org/doi/10.1377/hlthaff.2016.0226"
       },
       {
           "article": {
@@ -132,7 +151,7 @@ var articles =
               "title": "Rhetoric and Reform in Waiver States"
           },
           "journal": {
-              "title": "Rhetoric and Reform in Waiver States",
+              "title": "Journal of Health Politics, Policy and Law",
               "volume": 42,
               "issue": 2,
               "pages": {
@@ -141,6 +160,7 @@ var articles =
               }
           },
           "publication_year": 2017,
+          "url": "http://jhppl.dukejournals.org/content/42/2/247.long"
       },
       {
           "article": {
@@ -160,7 +180,7 @@ var articles =
               }
           },
           "publication_year": 2017,
-          "doi": "10.1017/S1744133116000244"
+          "url": "https://www.cambridge.org/core/journals/health-economics-policy-and-law/article/united-states-confronts-ebola-suasion-executive-action-and-fragmentation/4DE17D9B0D0F709C203E7746464A06FE"
       },
       {
           "article": {
@@ -179,7 +199,8 @@ var articles =
                   "end": 204
               }
           },
-          "publication_year": 2016
+          "publication_year": 2016,
+          "url": "http://ajph.aphapublications.org/doi/full/10.2105/AJPH.2015.302948"
       },
       {
           "article": {
@@ -200,7 +221,7 @@ var articles =
               }
           },
           "publication_year": 2014,
-          "doi": "10.1001/jama.2014.3700"
+          "url": "https://jamanetwork.com/journals/jama/fullarticle/1860323"
       }
   ]
 };
@@ -215,6 +236,13 @@ Handlebars.registerHelper('unlessOnlyTwo', function(arrayLength, options) {
 
 Handlebars.registerHelper('ifSingerPM', function(author, options) {
   if(author == 'Singer PM') {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+Handlebars.registerHelper('ifArticleIsOnePage', function(startPage, endPage, options){
+  if(startPage == endPage) {
     return options.fn(this);
   }
   return options.inverse(this);

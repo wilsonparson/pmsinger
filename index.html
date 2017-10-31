@@ -86,17 +86,13 @@
                   {{~#if journal.issue~}}
                       <span>({{~journal.issue~}}):</span>
                   {{~/if~}}
-                  {{#if journal.pages}}
-                      {{#if journal.pages.end}}
-                          <span>{{journal.pages.start}}&ndash;{{journal.pages.end}}.</span>
-                      {{else}}
-                          <span>{{journal.pages.start}}.</span>
-                      {{/if}}
-                  {{/if}}
-                  {{#if doi}}
-                      <span>DOI: <a href="http://dx.doi.org/{{doi}}">{{doi}}</a></span>
-                  {{/if}}
+                  {{#ifArticleIsOnePage journal.pages.start journal.pages.end}}
+                    <span>{{journal.pages.start}}.</span>
+                  {{else}}
+                    <span>{{journal.pages.start}}&ndash;{{journal.pages.end}}.</span>
+                  {{/ifArticleIsOnePage}}
                 </cite>
+                <a href="{{url}}"><span class="fa fa-fw fa-external-link article-link"></span></a>
               </li>
               {{/articles}}
             </ol>
