@@ -1,11 +1,16 @@
+
+$theme-colors: (
+  "light": #ffcb05,
+  "dark": #00274c
+);
+@import "../bootstrap/scss/bootstrap";
+
 section {
-  background: beige;
   padding-top: 30px;
 
   &:first-of-type {
     padding-top: 40px;
     padding-bottom: 20px;
-    background: black;
     color: white;
 
     .btn {
@@ -30,6 +35,8 @@ cite {
 
 .articles {
 
+  padding-left: 20px;
+
   li {
       text-indent: -20px;
       padding-left: 20px;
@@ -43,6 +50,5 @@ cite {
 
 footer {
   min-height: 100px;
-  background: black;
   color: white;
 }

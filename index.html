@@ -3,7 +3,7 @@
 <head>
   <title>Phillip M. Singer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
   <main>
-    <section class="row no-gutters">
+    <section class="row no-gutters bg-dark">
       <div class="col">
         <div class="container">
           <div class="row">
@@ -20,10 +20,10 @@
               <h1 class="display-4">Phillip M. Singer</h1>
               <p class="lead">PhD candidate in the Department of Health Management and Policy at the University of Michigan School of Public Health, with a concentration in Political Science.</p>
               <ul class="list-unstyled">
-                <li><i class="fa fa-fw fa-envelope text-muted" aria-label="Email"></i> <a href="mailto:pmsinger@umich.edu">pmsinger@umich.edu</a></li>
-                <li><i class="fa fa-fw fa-twitter text-muted" aria-label="Twitter"></i> <a href="https://twitter.com/SingerPM">@SingerPM</a></li>
+                <li aria-label="Email" title="Email"><i class="fa fa-fw fa-envelope text-light"></i> <a href="mailto:pmsinger@umich.edu" class="text-light">pmsinger@umich.edu</a></li>
+                <li aria-label="Twitter" title="Twitter profile"><i class="fa fa-fw fa-twitter text-light"></i> <a href="https://twitter.com/SingerPM" class="text-light">@SingerPM</a></li>
               </ul>
-              <a class="btn btn-primary btn-lg align-self-md-start" href="http://www-personal.umich.edu/~pmsinger/pmsingercv.pdf" target="_blank">Curriculum Vitae &raquo;</a>
+              <a class="btn btn-light btn-lg align-self-md-start" href="http://www-personal.umich.edu/~pmsinger/pmsingercv.pdf" target="_blank"><span class="text-dark">Curriculum Vitae &raquo;</span></a>
             </div>
             <div class="col-md-3 order-md-1">
               <img class="img-fluid rounded mt-4 mt-md-auto" src="img/PM Singer Headshot_cropped.jpg" alt="Phillip Singer Headshot">
@@ -36,7 +36,9 @@
       <div class="col">
         <div class="container">
           <h1>Biography</h1>
-          <p>My research topics include state health policy, comparative politics, vulnerable populations, political communication, and health reform. My work has been published in the <i>New England Journal of Medicine</i>, <i>Health Affairs</i>, <i>JAMA</i>, the <i>Journal of Health Politics</i>, <i>Policy and Law</i>, and the <i>American Journal of Public Health</i>, amongst others. My dissertation explores the politics of Medicaid expansion, using a mixed-methods approach. I have employed varied methodologies in my work, including key-informant interviews, process tracing, and econometric techniques.</p>
+          <p>My research focuses on Medicaid, comparative health policies, and health politics. I have researched, published, and presented extensively on political communications, waivers, mental health and substance abuse, the Affordable Care Act, and health workforce. I have been published in the New England Journal of Medicine, Health Affairs, JAMA, the Journal of Health Politics, Policy and Law, and the American Journal of Public Health, amongst others.</p>
+          <p>My dissertation, "Medicaid Expansion and the States: Implementation, Politics, and the Affordable Care Act," explores the development and implementation of health policy in an era of political polarization and partisanship. I use a mixed-methods approach to understand the shifting partisan dynamics and implementation decisions made by states to expand their Medicaid programs. In June 2012, the United States Supreme Court held that no state was compelled to expand Medicaid as part of the Affordable Care Act. In response to this flexibility, theory and evidence suggested that state implementation decisions would sort along political lines, with Republican policymakers rejecting the Medicaid expansion. However, that has not been the case.</p>
+          <p>Using key informant interviews and text analysis of government, legal, and archival materials, I trace and compare the development and implementation of Medicaid expansion programs. I find that partisanship matters in the implementation of Medicaid expansion, but that the institutional design, division of power, and interest groups limit and influence partisanship while shaping policy outcomes. My dissertation offers insight into important theoretical considerations of implementation, federalism, and political parties, highlighting how Republican policymakers grapple with the tradeoffs of transactional federalism while navigating the dynamics of a highly partisan and polarized policy.</p>
         </div>
       </div>
     </section>
@@ -44,13 +46,13 @@
       <div class="col">
         <div class="container">
           <h1>Research interests</h1>
-          <ul class="list-unstyled d-flex flex-wrap">
-            <li class="badge badge-dark">Politics of healthcare</li>
-            <li class="badge badge-dark">Medicaid</li>
-            <li class="badge badge-dark">Federalism</li>
-            <li class="badge badge-dark">State politics</li>
-            <li class="badge badge-dark">Health reform</li>
-            <li class="badge badge-dark">Federal and state political institutions</li>
+          <ul>
+            <li>Politics of healthcare</li>
+            <li>Medicaid</li>
+            <li>Federalism</li>
+            <li>State politics</li>
+            <li>Health reform</li>
+            <li>Federal and state political institutions</li>
           </ul>
         </div>
       </div>
@@ -92,7 +94,7 @@
                     <span>{{journal.pages.start}}&ndash;{{journal.pages.end}}.</span>
                   {{/ifArticleIsOnePage}}
                 </cite>
-                <a href="{{url}}"><span class="fa fa-fw fa-external-link article-link"></span></a>
+                <a href="{{url}}" aria-label="View article" title="View article"><span class="fa fa-fw fa-external-link article-link"></span></a>
               </li>
               {{/articles}}
             </ol>
@@ -101,7 +103,7 @@
       </div>
     </section>
   </main>
-  <footer class="d-flex justify-content-center align-items-center">
+  <footer class="d-flex justify-content-center align-items-center bg-dark">
     <small>&copy; 2017 Phillip M. Singer</small>
   </footer>
 </body>
