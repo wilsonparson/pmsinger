@@ -6381,6 +6381,9 @@ cite {
   .articles .article-link {
     margin-left: 7px; }
 
+.author-pmsinger {
+  font-weight: bold; }
+
 footer {
   min-height: 100px;
   color: white; }
